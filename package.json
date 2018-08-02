@@ -1,0 +1,22 @@
+{
+    "name": "sandalsoft-vscode-theme",
+    "displayName": "sandalsoft-vscode-theme",
+    "description": "Sandalsoft VS Code Color Theme",
+    "version": "0.0.1",
+    "publisher": "what",
+    "engines": {
+        "vscode": "^1.25.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Sandalsoft",
+                "uiTheme": "vs-dark",
+                "path": "./themes/Sandalsoft-color-theme.json"
+            }
+        ]
+    }
+}
