@@ -203,6 +203,7 @@
 				"foreground": "#6ebbbb"
 			}
 		},
+		
 		{ //4d9eeb
 			"name": "Keyword",
 			"scope": "keyword, modifier, variable.language.this, support.type.object, constant.language",
@@ -227,7 +228,7 @@
 		},
 		{
 			"name": "Function call",
-			"scope": "entity.name.function, support.function, meta.function-call",
+			"scope": "entity.name.function.js, support.function, meta.function-call",
 			"settings": {
 				// "fontStyle": "italic",
 				"foreground": "#3f7dce"
@@ -309,6 +310,43 @@
 				"foreground": "#c4ffff"
 			}
 		},
+
+		//////
+		//
+		//
+		//
+		//           Golang
+		//
+		//
+		//////
+
+		//entity.name.function.go
+		{ 
+			"name": "go function name",
+			"scope": "entity.name.function.go",
+			"settings": {
+				"fontStyle": "bold italic",
+				"foreground": "#2a52d6"
+			}
+		},
+		{ 
+			"name": "Go Keyword",
+			"scope": "keyword.function.go",
+			"settings": {
+				"fontStyle": "bold italic",
+				"foreground": "#dbdada"
+			}
+		}, //storage.type.error.go
+		
+
+		//////
+		//
+		//
+		//
+		//           JSON & CSS 
+		//
+		//
+		//////
 		{
 			"name": "JSON key",
 			"scope": "meta.object-literal.key, meta.object-literal.key string, support.type.property-name.json, variable.other.property",
