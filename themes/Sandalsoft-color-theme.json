@@ -229,7 +229,7 @@
     },
     {
       "name": "Function call",
-      "scope": "entity.name.function.js, support.function, meta.function-call",
+      "scope": "entity.name.function.js, entity.name.function.ts, support.function, meta.function-call",
       "settings": {
         // "fontStyle": "italic",
         "foreground": "#498ee9"
