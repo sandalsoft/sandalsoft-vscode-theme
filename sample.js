@@ -2,6 +2,15 @@
 import axios from "axios";
 import fs from "fs-extra";
 
+/*
+        VSCode command pallette: 
+          
+        
+     ->  Inspect TM Scopes
+
+
+
+*/
 class Rectangle {
   constructor(height, width) {
     this.height = height;
@@ -104,7 +113,7 @@ var Prism = (function() {
         }
 
         return o;
-      }
+      },
     },
 
     languages: {
@@ -191,7 +200,7 @@ var Prism = (function() {
             }
           }
         }
-      }
+      },
     },
     plugins: {},
 
@@ -203,7 +212,7 @@ var Prism = (function() {
       var env = {
         callback: callback,
         selector:
-          'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
+          'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code',
       };
 
       _.hooks.run("before-highlightall", env);
@@ -254,7 +263,7 @@ var Prism = (function() {
         element: element,
         language: language,
         grammar: grammar,
-        code: code
+        code: code,
       };
 
       _.hooks.run("before-sanity-check", env);
@@ -290,7 +299,7 @@ var Prism = (function() {
           JSON.stringify({
             language: env.language,
             code: env.code,
-            immediateClose: true
+            immediateClose: true,
           })
         );
       } else {
@@ -311,7 +320,7 @@ var Prism = (function() {
       var env = {
         code: text,
         grammar: grammar,
-        language: language
+        language: language,
       };
       _.hooks.run("before-tokenize", env);
       env.tokens = _.tokenize(env.code, env.grammar);
@@ -507,8 +516,8 @@ var Prism = (function() {
         for (var i = 0, callback; (callback = callbacks[i++]); ) {
           callback(env);
         }
-      }
-    }
+      },
+    },
   });
 
   var Token = (_.Token = function(type, content, alias, matchedStr, greedy) {
@@ -540,7 +549,7 @@ var Prism = (function() {
       classes: ["token", o.type],
       attributes: {},
       language: language,
-      parent: parent
+      parent: parent,
     };
 
     if (o.alias) {
@@ -645,8 +654,8 @@ Prism.languages.markup = {
         pattern: /^<\/?[^\s>\/]+/i,
         inside: {
           punctuation: /^<\/?/,
-          namespace: /^[^\s>\/:]+:/
-        }
+          namespace: /^[^\s>\/:]+:/,
+        },
       },
       "attr-value": {
         pattern: /=(?:("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|[^\s'">=]+)/i,
@@ -655,21 +664,21 @@ Prism.languages.markup = {
             /^=/,
             {
               pattern: /(^|[^\\])["']/,
-              lookbehind: true
-            }
-          ]
-        }
+              lookbehind: true,
+            },
+          ],
+        },
       },
       punctuation: /\/?>/,
       "attr-name": {
         pattern: /[^\s>\/]+/,
         inside: {
-          namespace: /^[^\s>\/:]+:/
-        }
-      }
-    }
+          namespace: /^[^\s>\/:]+:/,
+        },
+      },
+    },
   },
-  entity: /&#?[\da-z]{1,8};/i
+  entity: /&#?[\da-z]{1,8};/i,
 };
 
 Prism.languages.markup["tag"].inside["attr-value"].inside["entity"] =
@@ -696,20 +705,20 @@ Prism.languages.css = {
   atrule: {
     pattern: /@[\w-]+?.*?(?:;|(?=\s*\{))/i,
     inside: {
-      rule: /@[\w-]+/
+      rule: /@[\w-]+/,
       // See rest below
-    }
+    },
   },
   url: /url\((?:(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1|.*?)\)/i,
   selector: /[^{}\s][^{};]*?(?=\s*\{)/,
   string: {
     pattern: /("|')(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
-    greedy: true
+    greedy: true,
   },
   property: /[-_a-z\xA0-\uFFFF][-\w\xA0-\uFFFF]*(?=\s*:)/i,
   important: /\B!important\b/i,
   function: /[-a-z0-9]+(?=\()/i,
-  punctuation: /[(){};:]/
+  punctuation: /[(){};:]/,
 };
 
 Prism.languages.css["atrule"].inside.rest = Prism.languages.css;
@@ -721,8 +730,8 @@ if (Prism.languages.markup) {
       lookbehind: true,
       inside: Prism.languages.css,
       alias: "language-css",
-      greedy: true
-    }
+      greedy: true,
+    },
   });
 
   Prism.languages.insertBefore(
@@ -734,16 +743,16 @@ if (Prism.languages.markup) {
         inside: {
           "attr-name": {
             pattern: /^\s*style/i,
-            inside: Prism.languages.markup.tag.inside
+            inside: Prism.languages.markup.tag.inside,
           },
           punctuation: /^\s*=\s*['"]|['"]\s*$/,
           "attr-value": {
             pattern: /.+/i,
-            inside: Prism.languages.css
-          }
+            inside: Prism.languages.css,
+          },
         },
-        alias: "language-css"
-      }
+        alias: "language-css",
+      },
     },
     Prism.languages.markup.tag
   );

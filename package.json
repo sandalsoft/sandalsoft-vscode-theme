@@ -18,5 +18,8 @@
                 "path": "./themes/Sandalsoft-color-theme.json"
             }
         ]
+    },
+    "dependencies": {
+        "axios": "^0.19.0"
     }
 }

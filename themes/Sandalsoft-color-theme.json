@@ -328,17 +328,33 @@
       "scope": "entity.name.function.go",
       "settings": {
         "fontStyle": "bold italic",
-        "foreground": "#2a52d6"
+        "foreground": "#557cff"
       }
     },
     {
       "name": "Go Keyword",
-      "scope": "keyword.function.go",
+      "scope": "keyword.function.go, keyword.operator.assignment.go",
       "settings": {
         "fontStyle": "bold italic",
         "foreground": "#dbdada"
       }
     }, //storage.type.error.go
+    {
+      "name": "Double quoted text", // object properties that are functions
+      "scope": "string.quoted.double.go", // entity.name.function",
+      "settings": {
+        "fontStyle": "italic",
+        "foreground": "#7fb3c2"
+      }
+    },
+    {
+      "name": "Constant", // object properties that are functions
+      "scope": "constant.language.go", // entity.name.function",
+      "settings": {
+        // "fontStyle": "italic",
+        "foreground": "#dbdd6b"
+      }
+    },
 
     //////
     //
@@ -399,10 +415,10 @@
       }
     },
     {
-      "name": "HTML tag attribute",
+      "name": "HTML tag attribute-------",
       "scope": "entity.other.attribute-name",
       "settings": {
-        "foreground": "#2438EA"
+        "foreground": "#3B73B7"
       }
     },
     {
